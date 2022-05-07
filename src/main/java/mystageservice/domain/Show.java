@@ -1,7 +1,6 @@
 package mystageservice.domain;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -24,14 +23,16 @@ public class Show {
     private float price;
     private int maxTickets;
 
-    public float performersTotalRating(){
+    public float performersTotalRating() {
         float sum = 0;
         for (Performer performer : distribution) {
             sum += performer.getRating();
         }
         sum /= distribution.size();
         return sum;
-    };
+    }
+
+    ;
 
     @Override
     public String toString() {

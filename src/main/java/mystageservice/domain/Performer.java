@@ -17,9 +17,9 @@ public class Performer {
     private List<Show> showsList;
     private float rating;
 
-    public void calculateRating(){
+    public void calculateRating() {
         float sum = 0;
-        for (Show show : showsList){
+        for (Show show : showsList) {
             sum += show.getRating();
         }
         rating = sum / showsList.size();

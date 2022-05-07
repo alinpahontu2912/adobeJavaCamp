@@ -16,7 +16,6 @@ public class Main {
     public static void main(String[] args) {
 
         SpringApplication.run(Main.class, args);
-        System.out.println("Welcome to demo");
         User user1 = Critique.builder().name("Alin").ratingCount(10).phoneNumber("0422432342").build();
         myStageService.addUser(user1);
         System.out.println(user1.toString());

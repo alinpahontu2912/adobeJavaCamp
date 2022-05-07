@@ -1,6 +1,5 @@
 package mystageservice;
 
-import lombok.Setter;
 import mystageservice.domain.OperaPlay;
 import mystageservice.domain.Show;
 import mystageservice.domain.TheatrePlay;
@@ -10,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static mystageservice.domain.Constants.Language.FRENCH;
+
 @Service
 public class ServiceDatabase {
 
@@ -29,10 +29,8 @@ public class ServiceDatabase {
         availableShows.add(traviatta);
     }
 
-    public void listShows(){
-        for (Show show : availableShows) {
-            System.out.println(show.toString());
-        }
+    public List<Show> listShows() {
+        return availableShows;
     }
 
 }

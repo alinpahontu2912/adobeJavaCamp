@@ -2,16 +2,14 @@ package mystageservice.rest.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
-import mystageservice.domain.Show;
-
-import java.util.List;
 
 @Data
-public class UserOutputDto {
+public class ShowOutputDto {
 
     @JsonProperty
     private String name;
-    private String phoneNumber;
-    private List<Show> viewedShows;
+    private float rating;
+    private int price;
+    private int maxTickets;
 
 }

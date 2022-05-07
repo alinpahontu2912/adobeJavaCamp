@@ -1,6 +1,5 @@
 package mystageservice;
 
-import lombok.Getter;
 import lombok.SneakyThrows;
 import mystageservice.domain.User;
 import org.springframework.stereotype.Service;
@@ -17,7 +16,7 @@ public class MyStageService {
         users.add(user);
     }
 
-    public List<User> findAll(){
+    public List<User> findAll() {
         return users;
     }
 

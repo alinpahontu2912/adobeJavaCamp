@@ -3,7 +3,6 @@ package mystageservice.rest.controllers;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import mystageservice.MyStageService;
-import mystageservice.ServiceDatabase;
 import mystageservice.domain.User;
 import mystageservice.rest.dto.UserOutputDto;
 import org.modelmapper.ModelMapper;
