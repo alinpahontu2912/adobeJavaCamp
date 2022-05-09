@@ -14,7 +14,7 @@ public class User {
     private String name;
     private String phoneNumber;
     private String hashPassword;
-    private String creditCard;
+    private CreditCard creditCard;
     private List<Address> addresses;
     private List<Show> viewedShows;
 

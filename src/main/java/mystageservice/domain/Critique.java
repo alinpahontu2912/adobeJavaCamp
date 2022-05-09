@@ -14,14 +14,8 @@ public class Critique extends User {
     private int ratingCount;
 
     @Builder
-    public Critique(String name, String phoneNumber, String hashPassword, String creditCard, List<Address> addresses, List<Show> viewedShows, List<Discount> discountList, Date firstReview, int ratingCount) {
+    public Critique(String name, String phoneNumber, String hashPassword, CreditCard creditCard, List<Address> addresses, List<Show> viewedShows, List<Discount> discountList, Date firstReview, int ratingCount) {
         super(name, phoneNumber, hashPassword, creditCard, addresses, viewedShows);
-        this.discountList = discountList;
-        this.firstReview = firstReview;
-        this.ratingCount = ratingCount;
-    }
-
-    public Critique(List<Discount> discountList, Date firstReview, int ratingCount) {
         this.discountList = discountList;
         this.firstReview = firstReview;
         this.ratingCount = ratingCount;
