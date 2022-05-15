@@ -1,9 +1,6 @@
 package mystageservice.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -11,6 +8,7 @@ import java.util.List;
 
 
 @Data
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity

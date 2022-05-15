@@ -1,10 +1,10 @@
-package mystageservice.rest.controllers;
+package mystageservice.controllers;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import mystageservice.MyStageService;
 import mystageservice.domain.User;
-import mystageservice.rest.dto.UserOutputDto;
+import mystageservice.dto.UserOutputDto;
+import mystageservice.services.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,13 +16,13 @@ import java.util.stream.Collectors;
 @Slf4j
 public class UserController {
 
-    private final MyStageService myStageService;
 
+    private final UserService userService;
     private final ModelMapper modelMapper;
 
     @GetMapping("users")
     public List<UserOutputDto> getUsers() {
-        List<User> allUsers = myStageService.findAll();
+        List<User> allUsers = userService.findAll();
         List<UserOutputDto> usersDto = allUsers.stream().map(
                         user -> modelMapper.map(user, UserOutputDto.class))
                 .collect(Collectors.toList());
@@ -31,11 +31,11 @@ public class UserController {
 
     @PostMapping("users")
     public void createNewUser(@RequestBody User user) {
-        myStageService.addUser(user);
+        userService.addUser(user);
     }
 
     @GetMapping("users/{name}")
-    public User getUser(@PathVariable String name) {
-        return myStageService.findByName(name);
+    public User getUser(@PathVariable String name) throws Exception {
+        return userService.findById(name);
     }
 }

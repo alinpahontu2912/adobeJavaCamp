@@ -1,11 +1,11 @@
-package mystageservice.rest.controllers;
+package mystageservice.controllers;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import mystageservice.MyStageUtil;
-import mystageservice.ServiceDatabase;
 import mystageservice.domain.Show;
-import mystageservice.rest.dto.ShowOutputDto;
+import mystageservice.dto.ShowOutputDto;
+import mystageservice.services.ShowService;
 import org.modelmapper.ModelMapper;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,21 +20,20 @@ import java.util.stream.Collectors;
 @Slf4j
 public class ShowController {
 
-    private final ServiceDatabase serviceDatabase;
     private final ModelMapper modelMapper;
+    private final ShowService showService;
 
     @GetMapping("shows")
     public List<ShowOutputDto> displayShows() {
-        List<Show> allShows = serviceDatabase.listShows();
-        List<ShowOutputDto> showsDto = allShows.stream().map(
+        List<Show> allShows = showService.listAllShows();
+        return allShows.stream().map(
                         show -> modelMapper.map(show, ShowOutputDto.class))
                 .collect(Collectors.toList());
-        return showsDto;
     }
 
     @GetMapping("shows/sortby{type}")
     public List<ShowOutputDto> sortShows(@PathVariable String type) {
-        List<Show> sorted = new ArrayList<>(serviceDatabase.listShows());
+        List<Show> sorted = new ArrayList<>(showService.listAllShows());
         switch (type) {
             case "rating":
                 sorted.sort(MyStageUtil.ratingComparator);
@@ -43,9 +42,8 @@ public class ShowController {
                 sorted.sort(MyStageUtil.popularPerformersComparator);
                 break;
         }
-        List<ShowOutputDto> result = sorted.stream().map(
+        return sorted.stream().map(
                 show -> modelMapper.map(show, ShowOutputDto.class)).collect(Collectors.toList());
-        return result;
     }
 
 
