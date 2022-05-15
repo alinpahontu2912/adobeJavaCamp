@@ -1,6 +1,6 @@
 [
   {
-    "_class": "mystageservice.domain.Show",
+    "_class": "mystageservice.domain.TheatrePlay",
     "id": 0,
     "price": 10,
     "rating": 5,
