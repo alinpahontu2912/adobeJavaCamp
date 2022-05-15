@@ -8,6 +8,7 @@ public class Constants {
     public static final String GREAT = "Good enough, but not for everybody... 4 out of 5";
     public static final String OK = "Nt great, not terrible, just fine. 3 out of 5";
     public static final String TERRIBLE = "Terrible experience, not worth anything... 2 out of 5 for getting me out of the house";
+
     public static enum Language {
         ROMANIAN,
         ENGLISH,

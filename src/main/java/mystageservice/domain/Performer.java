@@ -1,21 +1,30 @@
 package mystageservice.domain;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
 import java.util.List;
 
 @Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
+@Entity
 public class Performer {
 
     private String name;
     private int age;
+    @ManyToMany(mappedBy = "distribution")
     private List<Show> showsList;
     private float rating;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "performer_key_sequence_generator")
+    @SequenceGenerator(name = "performer_key_sequence_generator", sequenceName = "performer_sequence", allocationSize = 1)
+    private Long id;
 
     public void calculateRating() {
         float sum = 0;
@@ -24,5 +33,6 @@ public class Performer {
         }
         rating = sum / showsList.size();
     }
+
 
 }
