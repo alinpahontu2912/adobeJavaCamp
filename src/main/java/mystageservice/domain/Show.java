@@ -1,6 +1,9 @@
 package mystageservice.domain;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -49,23 +52,6 @@ public class Show {
         }
         sum /= distribution.size();
         return sum;
-    }
-
-    ;
-
-    @Override
-    public String toString() {
-        return "Show{" +
-                "name='" + name + '\'' +
-                ", date=" + date +
-                ", distribution=" + distribution +
-                ", critiquesReviews=" + critiquesReviews +
-                ", rating=" + rating +
-                ", numberOfRatings=" + numberOfRatings +
-                ", duration=" + duration +
-                ", price=" + price +
-                ", maxTickets=" + maxTickets +
-                '}';
     }
 
 }

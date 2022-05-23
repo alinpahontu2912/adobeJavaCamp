@@ -18,4 +18,9 @@ public class ShowService {
     public List<Show> listAllShows() {
         return showRepository.findAll();
     }
+
+    public void addNewShow(Show show) {
+        showRepository.save(show);
+    }
+
 }

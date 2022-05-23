@@ -1,10 +1,103 @@
 [
   {
-    "_class": "mystageservice.domain.TheatrePlay",
+    "_class": "mystageservice.domain.Critique",
+    "name": "TestCrit",
+    "reviewsList": [
+      {
+        "_class": "mystageservice.domain.Review",
+        "review": "Amazing performance!",
+        "show": {
+          "_class": "mystageservice.domain.OperaPlay",
+          "price": 20,
+          "rating": 4,
+          "maxTickets": 100,
+          "name": "La Traviatta",
+          "duration": 300,
+          "distribution": [
+            {
+              "_class": "mystageservice.domain.Performer",
+              "name": "Johnny Depp",
+              "rating": 5,
+              "age": 51
+            },
+            {
+              "_class": "mystageservice.domain.Performer",
+              "name": "Amber Heard",
+              "rating": 1,
+              "age": 37
+            }
+          ]
+        }
+      }
+    ],
     "id": 0,
-    "price": 10,
-    "rating": 5,
-    "maxTickets": 150,
-    "name": "Test"
+    "ratingCount": 4,
+    "creditCard": {
+      "_class": "mystageservice.domain.CreditCard",
+      "CVV": "708",
+      "cardNumber": "5331559645342341",
+      "amount": 3450
+    },
+    "addresses": [
+      {
+        "_class": "mystageservice.domain.Address",
+        "address": "Matei Basarab 2"
+      },
+      {
+        "_class": "mystageservice.domain.Address",
+        "address": "Iancu Hunedoara 45"
+      }
+    ],
+    "viewedShows": [
+      {
+        "_class": "mystageservice.domain.OperaPlay",
+        "price": 20,
+        "rating": 4,
+        "maxTickets": 100,
+        "name": "La Traviatta",
+        "duration": 300,
+        "distribution": [
+          {
+            "_class": "mystageservice.domain.Performer",
+            "name": "Johnny Depp",
+            "rating": 5,
+            "age": 51
+          },
+          {
+            "_class": "mystageservice.domain.Performer",
+            "name": "Amber Heard",
+            "rating": 1,
+            "age": 37
+          }
+        ]
+      },
+      {
+        "_class": "mystageservice.domain.TheatrePlay",
+        "price": 15,
+        "rating": 5,
+        "maxTickets": 60,
+        "date": "2014-02-01T09:28:56.321-10:00",
+        "name": "Miss Poop strikes again",
+        "duration": 80,
+        "availableBreaks": true,
+        "privateTheatre": false,
+        "breakDuration": 20,
+        "numberOfRatings": 4,
+        "distribution": [
+          {
+            "_class": "mystageservice.domain.Performer",
+            "name": "Johnny Depp2",
+            "rating": 3,
+            "age": 25
+          },
+          {
+            "_class": "mystageservice.domain.Performer",
+            "name": "Jason Momoa",
+            "rating": 3,
+            "age": 36
+          }
+        ]
+      }
+    ]
   }
 ]

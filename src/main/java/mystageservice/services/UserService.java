@@ -19,15 +19,17 @@ public class UserService {
         userRepository.save(user);
     }
 
+    public void deleteUser(User user) {
+        userRepository.delete(user);
+    }
+
     public List<User> findAll() {
         return userRepository.findAll();
     }
 
     public User findById(String name) throws Exception {
         User user = userRepository.findFirstByName(name);
-        if (user == null) {
-            throw new Exception("User not found");
-        }
+        if (user == null) throw new Exception("User not found");
         return user;
     }
 

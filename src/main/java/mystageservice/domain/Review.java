@@ -13,10 +13,10 @@ import javax.persistence.*;
 public class Review {
 
     @ManyToOne
-    private User critique;
+    private Critique critique;
     private String review;
 
-    @ManyToOne
+    @OneToOne
     private Show show;
 
     @Id

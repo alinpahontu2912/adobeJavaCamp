@@ -34,6 +34,11 @@ public class UserController {
         userService.addUser(user);
     }
 
+    @DeleteMapping("users")
+    public void deleteUser(@RequestBody User user) {
+        userService.deleteUser(user);
+    }
+
     @GetMapping("users/{name}")
     public User getUser(@PathVariable String name) throws Exception {
         return userService.findById(name);
