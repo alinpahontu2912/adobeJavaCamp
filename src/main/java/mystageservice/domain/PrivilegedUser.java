@@ -22,4 +22,13 @@ public class PrivilegedUser extends User {
         this.discount = discount;
     }
 
+    @Override
+    public boolean buyTicket(Show show, int numberOfTickets) {
+        if (getCreditCard().isCorrect() && show.getMaxTickets() > numberOfTickets && getCreditCard().isAccepted(numberOfTickets * show.getPrice() * discount)) {
+            show.setMaxTickets(show.getMaxTickets() - numberOfTickets);
+            getCreditCard().setAmount(getCreditCard().getAmount() - show.getPrice() * numberOfTickets * discount);
+            return true;
+        }
+        return false;
+    }
 }

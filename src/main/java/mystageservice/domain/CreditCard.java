@@ -41,9 +41,12 @@ public class CreditCard {
         return cardNumber.charAt(0) == 6 && cardNumber.charAt(1) == 4;
     }
 
-    public boolean isAccepted() {
+    public boolean isCorrect() {
         return isMaestro() || isVisa() || isMasterCard();
     }
 
+    public boolean isAccepted(float sum) {
+        return amount > sum;
+    }
 
 }

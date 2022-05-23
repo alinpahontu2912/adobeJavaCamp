@@ -25,13 +25,4 @@ public class TheatrePlay extends Show {
         this.breakDuration = breakDuration;
     }
 
-
-    @Override
-    public String toString() {
-        return "TheatrePlay{" +
-                "availableBreaks=" + availableBreaks +
-                ", privateTheatre=" + privateTheatre +
-                ", breakDuration=" + breakDuration +
-                '}';
-    }
 }

@@ -7,6 +7,12 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class MyStageUtil {
+    public static String catApi = "https://catfact.ninja/fact";
+
+    public static String catApiKey = "fact";
+
+    // search by title
+    public static String movieApi = "http://www.omdbapi.com/?apikey=38aa54b0&t=";
 
     public static Comparator<Show> ratingComparator = Comparator.comparing(Show::getRating);
 

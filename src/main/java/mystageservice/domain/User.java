@@ -42,7 +42,7 @@ public class User {
     }
 
     public boolean buyTicket(Show show, int numberOfTickets) {
-        if (creditCard.isAccepted() && show.getMaxTickets() > numberOfTickets && creditCard.getAmount() > numberOfTickets * show.getPrice()) {
+        if (creditCard.isCorrect() && show.getMaxTickets() > numberOfTickets && creditCard.isAccepted(numberOfTickets * show.getPrice())) {
             show.setMaxTickets(show.getMaxTickets() - numberOfTickets);
             creditCard.setAmount(creditCard.getAmount() - show.getPrice() * numberOfTickets);
             return true;
@@ -50,11 +50,5 @@ public class User {
         return false;
     }
 
-    public boolean returnTicket(Show show, int numberOfTickets) {
-        show.setMaxTickets(show.getMaxTickets() + numberOfTickets);
-        creditCard.setAmount(creditCard.getAmount() + show.getPrice() * numberOfTickets);
-        return true;
-
-    }
 
 }

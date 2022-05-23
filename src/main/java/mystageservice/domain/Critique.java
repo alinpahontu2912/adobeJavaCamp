@@ -34,4 +34,9 @@ public class Critique extends User {
     public void addRating(float rating, Show show) {
         show.setRating((show.getRating() * show.getNumberOfRatings() + rating * ratingCount) / (show.getNumberOfRatings() + ratingCount));
     }
+
+    public void addReview(String review, Show show) {
+        Review newReview = new Review.ReviewBuilder().critique(this).review(review).show(show).build();
+        show.getCritiquesReviews().add(newReview);
+    }
 }

@@ -4,8 +4,10 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import mystageservice.MyStageUtil;
 import mystageservice.domain.Show;
+import mystageservice.dto.ShowApiOutputDto;
 import mystageservice.dto.ShowOutputDto;
 import mystageservice.services.ShowService;
+import mystageservice.services.movieApi.ShowApiService;
 import org.modelmapper.ModelMapper;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -46,5 +48,14 @@ public class ShowController {
                 show -> modelMapper.map(show, ShowOutputDto.class)).collect(Collectors.toList());
     }
 
+    @GetMapping("shows/{title}")
+    public ShowApiOutputDto getShow(@PathVariable String title) throws Exception {
+        return ShowApiService.getInfo(title);
+    }
+
+    @GetMapping("shows/Api/{title}")
+    public ShowApiOutputDto getInternetShow(@PathVariable String title) throws Exception {
+        return ShowApiService.getInfo(title);
+    }
 
 }

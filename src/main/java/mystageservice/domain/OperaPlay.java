@@ -13,22 +13,16 @@ import java.util.List;
 @DiscriminatorValue("1")
 public class OperaPlay extends Show {
 
-    private Enum Language;
+    private String Language;
     private boolean translationAvailable;
 
     @Builder
-    public OperaPlay(String name, Date date, List<Performer> distribution, List<Review> critiquesReviews, float rating, int numberOfRatings, int duration, float price, int maxTickets, List<User> viewedBy, Long id, Enum language, boolean translationAvailable) {
+    public OperaPlay(String name, Date date, List<Performer> distribution, List<Review> critiquesReviews, float rating,
+                     int numberOfRatings, int duration, float price, int maxTickets, List<User> viewedBy, Long id,
+                     String language, boolean translationAvailable) {
         super(name, date, distribution, critiquesReviews, rating, numberOfRatings, duration, price, maxTickets, viewedBy, id);
-        Language = language;
+        this.Language = language;
         this.translationAvailable = translationAvailable;
     }
 
-
-    @Override
-    public String toString() {
-        return "OperaPlay{" +
-                "Language=" + Language +
-                ", translationAvailable=" + translationAvailable +
-                '}';
-    }
 }
