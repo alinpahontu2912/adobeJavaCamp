@@ -14,11 +14,11 @@ import javax.persistence.*;
 @Builder
 public class Review {
 
-    @ManyToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Critique critique;
     private String review;
 
-    @OneToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Show show;
 
     @Id

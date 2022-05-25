@@ -29,7 +29,7 @@ public class Show {
     )
     private List<Performer> distribution;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Review> critiquesReviews;
     private float rating;
     private int numberOfRatings;

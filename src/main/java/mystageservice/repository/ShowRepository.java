@@ -8,6 +8,7 @@ import java.util.List;
 
 @Repository
 public interface ShowRepository extends JpaRepository<Show, Long> {
+    Show findFirstByName(String name);
 
     List<Show> findAll();
 

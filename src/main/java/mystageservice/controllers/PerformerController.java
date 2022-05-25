@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,7 +26,7 @@ public class PerformerController {
     @GetMapping("/performers")
     public List<PerformerOutputDto> getPerformers() {
         List<Performer> performerList = performerService.findAll();
-        Collections.sort(performerList, MyStageUtil.performerNameComparator);
+        performerList.sort(MyStageUtil.performerNameComparator);
         return performerList.stream()
                 .map(performer -> modelMapper.map(performer, PerformerOutputDto.class))
                 .collect(Collectors.toList());
@@ -36,7 +35,19 @@ public class PerformerController {
     @GetMapping("/performers/rating")
     public List<PerformerOutputDto> getPerformersRating() {
         List<Performer> performerList = performerService.findAll();
-        Collections.sort(performerList, MyStageUtil.performerRatingComparator);
+        performerList.sort(MyStageUtil.performerRatingComparator);
+        List<PerformerOutputDto> list = new ArrayList<>();
+        for (Performer performer : performerList) {
+            PerformerOutputDto map = modelMapper.map(performer, PerformerOutputDto.class);
+            list.add(map);
+        }
+        return list;
+    }
+
+    @GetMapping("/performers/age")
+    public List<PerformerOutputDto> getPerformersAge() {
+        List<Performer> performerList = performerService.findAll();
+        performerList.sort(MyStageUtil.performerAgeComparator);
         List<PerformerOutputDto> list = new ArrayList<>();
         for (Performer performer : performerList) {
             PerformerOutputDto map = modelMapper.map(performer, PerformerOutputDto.class);

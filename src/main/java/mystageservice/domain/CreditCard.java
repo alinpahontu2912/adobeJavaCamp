@@ -16,7 +16,7 @@ import java.util.Date;
 public class CreditCard {
 
     private String cardNumber;
-    private String CVV;
+    private int CVV;
     private Date expiryDate;
     private float amount;
 

@@ -8,5 +8,6 @@ public class UserOutputDto {
 
     @JsonProperty
     private String name;
+    private String phoneNumber;
 
 }

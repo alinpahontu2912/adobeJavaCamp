@@ -9,6 +9,5 @@ public class ShowOutputDto {
     @JsonProperty
     private String name;
     private float rating;
-    private int price;
 
 }

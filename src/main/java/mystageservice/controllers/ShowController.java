@@ -43,6 +43,9 @@ public class ShowController {
             case "popularity":
                 sorted.sort(MyStageUtil.popularPerformersComparator);
                 break;
+            case "critiques":
+                sorted.sort(MyStageUtil.critiquesCountComparator);
+                break;
         }
         return sorted.stream().map(
                 show -> modelMapper.map(show, ShowOutputDto.class)).collect(Collectors.toList());

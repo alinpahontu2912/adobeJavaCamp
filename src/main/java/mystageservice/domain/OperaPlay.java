@@ -1,5 +1,6 @@
 package mystageservice.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 
@@ -10,6 +11,7 @@ import java.util.List;
 
 @NoArgsConstructor
 @Entity
+@AllArgsConstructor
 @DiscriminatorValue("1")
 public class OperaPlay extends Show {
 

@@ -30,8 +30,8 @@ public class UserController {
     }
 
     @PostMapping("users")
-    public void createNewUser(@RequestBody User user) {
-        userService.addUser(user);
+    public void createNewUser(@RequestBody User user, @RequestBody String password) {
+        userService.addUser(user, password);
     }
 
     @DeleteMapping("users")
