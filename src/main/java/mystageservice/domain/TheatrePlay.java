@@ -2,6 +2,7 @@ package mystageservice.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.DiscriminatorValue;
@@ -9,8 +10,8 @@ import javax.persistence.Entity;
 import java.util.Date;
 import java.util.List;
 
+@Data
 @NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @DiscriminatorValue("2")
 public class TheatrePlay extends Show {

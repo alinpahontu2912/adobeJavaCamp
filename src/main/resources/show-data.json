@@ -178,7 +178,7 @@
     ]
   },
   {
-    "_class": "mystageservice.domain.PrivilegedUser",
+    "_class": "mystageservice.domain.PremiumUser",
     "name": "TestCrit",
     "id": 0,
     "viewedShows": []

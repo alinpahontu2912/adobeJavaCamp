@@ -12,12 +12,12 @@ import java.util.List;
 @Entity
 @NoArgsConstructor
 @DiscriminatorValue("2")
-public class PrivilegedUser extends User {
+public class PremiumUser extends User {
 
     private float discount;
 
     @Builder
-    public PrivilegedUser(Long id, String name, String phoneNumber, String hashPassword, CreditCard creditCard, List<Address> addresses, List<Show> viewedShows, float discount) {
+    public PremiumUser(Long id, String name, String phoneNumber, String hashPassword, CreditCard creditCard, List<Address> addresses, List<Show> viewedShows, float discount) {
         super(id, name, phoneNumber, hashPassword, creditCard, addresses, viewedShows);
         this.discount = discount;
     }
