@@ -15,12 +15,13 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public void addUser(User user, String password) {
+    public User addUser(User user, String password) {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(password);
         stringBuilder.reverse();
         user.setHashPassword(stringBuilder.reverse().toString());
         userRepository.save(user);
+        return user;
     }
 
     public void deleteUser(User user) {
